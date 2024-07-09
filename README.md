@@ -121,8 +121,9 @@ flowchart TB
   end
   subgraph s1[upath]
     B ---> U
-    U --> UP
-    U --> UW
+    UL --> UP
+    UL --> UW
+    UL --> UF
     BP --> UP
     BW --> UW
     U --> UL
@@ -139,9 +140,10 @@ flowchart TB
   BW(WindowsPath)
 
   U(UPath)
+  UL(LocalPath)
   UP(PosixUPath)
   UW(WindowsUPath)
-  UL(FilePath)
+  UF(FilePath)
   US3(S3Path)
   UH(HttpPath)
   UO(...Path)
@@ -150,7 +152,7 @@ flowchart TB
   classDef nu fill:#f7f7f7,stroke:#b2182b,stroke-width:2px,color:#333
 
   class A,AP,AW,B,BP,BW,UP,UW np
-  class U,UL,US3,UH,UO nu
+  class UL,U,UF,US3,UH,UO nu
 
   style UO stroke-dasharray: 3 3
 
